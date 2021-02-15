@@ -5,7 +5,12 @@ body {color: #555; }
 
 
 /* header */
-#header { border-bottom:0px solid #ddd }
+#header { border-bottom:0px solid #ddd; transition: all 0.3s; }
+#header.on {
+    position: fixed;
+    width: 100%; top: 0; left: 0; z-index: 99999;
+    background: #fff;
+}
 #header > div { max-width:1200px; margin:0 auto; position:relative; }
 #header h1 { padding:20px 0; margin-left:70px }
 /* 블록요소들을 한줄로 정렬할때 float 정렬 대신 position:absolute를 사용할 때는
@@ -142,10 +147,11 @@ body {color: #555; }
     text-align:center;
     color:#fff; opacity:0;
 } */
+/* 슬릭슬라이드 */
 .article1 .slide_group .slide .txt {  
     position:absolute;
-    top:50%; left:50%;
-    transform:translate(-50%, -50%);
+    top:50%; left:0%; right: 0;
+    transform:translateY(-50%);
     text-align:center;
     color:#fff; 
 }
